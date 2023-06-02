@@ -1,21 +1,26 @@
-// Arduino Car Parking System
+// C++ code
+// Código para o projeto de estacionamento inteligente*
 
+// Incluir bibliotecas
 #include <Wire.h> 
 #include <LiquidCrystal_I2C.h>
-LiquidCrystal_I2C lcd(0x27,16,2);  //Change the HEX address
+LiquidCrystal_I2C lcd(0x27,16,2);  
 #include <Servo.h> 
 
+// Definindo o servo
 Servo myservo1;
 
+// Definindo as entradas dos sensores
 int IR1 = 2;
 int IR2 = 4;
 
-int Slot = 4;           //Enter Total number of parking Slots
+int Slot = 4;           // Total de vagas que o estacionamento possui
 
 int flag1 = 0;
 int flag2 = 0;
 
 void setup() {
+  // Iniciando o LCD
   lcd.init();
   lcd.backlight();
 pinMode(IR1, INPUT);
